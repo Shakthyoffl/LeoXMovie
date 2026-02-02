@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 post_sessions = {}
 
 USE_GETFILE_BUTTON_BY_DEFAULT = True
-DEFAULT_WATERMARK = "Join [ᴅʀᴇᴀᴍxʙᴏᴛᴢ](https://t.me/dreamxbotz)"
+DEFAULT_WATERMARK = "Join [1TamilMovie](https://t.me/Get1TamilMoviez)"
 LANGUAGES_FORMAT = "➥ <b>Languages :</b> <code>{langs}</code>"
 RESOLUTIONS_FORMAT = "\n➥ <b>Qualities :</b> <code>{resolutions}</code>"
 OTT_FORMAT = "\n➥ <b>Available on :</b> <code>{otts}</code>"
@@ -176,7 +176,7 @@ async def start_post_session(client: Client, message: Message, user_id: int, mov
         movie_year = re.sub(r"[ *:\.]", "-", movie_year)
         url = f"https://telegram.me/{temp.U_NAME}?start=getfile-{movie_year}"
         post_sessions[user_id]["buttons"].append(
-            [InlineKeyboardButton("📥 Get Files 📥", url=url)])
+            [InlineKeyboardButton("📥 Click here to Get Files 📥", url=url)])
         logger.info(f"Default 'Get Files' button added for session {user_id}")
 
     await update_post_preview(client, user_id, message.chat.id, force_resend=True)
